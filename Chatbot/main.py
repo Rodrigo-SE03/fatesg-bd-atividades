@@ -6,7 +6,7 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["chatbot"]  
 collection = db["conversas"]  
 
-model_path = "D:\\Models\\mistral.gguf" 
+model_path = "mistral.gguf" 
 llm = Llama(model_path=model_path, n_ctx=2048,verbose=False)
 messages = [
         {"role": "system", "content": "Você é um assistente útil."}
@@ -35,11 +35,3 @@ def gerar_resposta(pergunta):
         "resposta": resp_text
     })
     return resp_text
-
-# print("Bem-vindo ao Chatbot!")
-# while True:
-#     pergunta = input("Você: ")
-#     if pergunta.lower() == "sair":
-#         break
-#     resposta = gerar_resposta(pergunta)
-#     print("Chatbot:", resposta)

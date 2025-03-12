@@ -2,7 +2,7 @@ import pymongo
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-
+import matplotlib.pyplot as plt
 
 # Conectar ao MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017/")  
@@ -35,8 +35,6 @@ for idade in range(25, 45, 5):
     salario_predito = model.predict(pd.DataFrame([[idade]], columns=["idade"]))
     print(f"Idade: {idade}, Salário estimado: R$ {salario_predito[0]:.2f}")
 
-#draw the regression line
-import matplotlib.pyplot as plt
 plt.scatter(X_train, y_train, color = 'red')
 plt.plot(X_train, model.predict(X_train), color = 'blue')
 plt.title('Idade x Salário (Conjunto de Treino)')

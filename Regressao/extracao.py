@@ -4,7 +4,7 @@ import pymongo  # Para interagir com o banco de dados MongoDB
 
 
 # Conectando ao MongoDB
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb://localhost:27017")
 db = client["startup"]
 collection = db["funcionarios"]
 
