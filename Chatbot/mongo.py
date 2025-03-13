@@ -10,14 +10,15 @@ collection = db["funcionarios"]
 
 funcionarios = []
 with open('Chatbot\Salary Data copy.csv', 'r') as f:
-    for line in f.readlines()[1:69]:
+    for line in f.readlines()[1:70]:
+        line = line.split(',')
         funcionario = {
             "idade": int(line[0]),
             "genero": line[1],
             "escolaridade": line[2],
             "cargo": line[3],
             "experiencia": line[4],
-            "salario": int(line[5])/10, # O valor foi dividido por 10 pois estava muito alto
+            "salario": float(line[5].replace(',', '.'))/10, # O valor foi dividido por 10 pois estava muito alto
         }
         funcionarios.append(funcionario)
 
