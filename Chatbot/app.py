@@ -1,6 +1,6 @@
 import streamlit as st 
 from streamlit_chat import message
-from main import gerar_resposta, get_conversas, limpar_historico
+from model import gerar_resposta, get_conversas, limpar_historico
 
 st.set_page_config(layout="centered", initial_sidebar_state="collapsed")
 

@@ -15,7 +15,7 @@ messages = [
         },
         {
             "role": "user",
-            "content": [{"type": "text", "text": "Who are you?"},]
+            "content": [{"type": "text", "text": "Quem é você?"},]
         },
     ],
 ]
