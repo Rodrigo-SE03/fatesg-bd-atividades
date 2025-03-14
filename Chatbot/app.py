@@ -6,6 +6,7 @@ st.set_page_config(layout="centered", initial_sidebar_state="collapsed")
 
 messages = get_conversas()
 
+
 for m in messages:
     message(m["pergunta"], is_user=True, allow_html=True)
     message(m["resposta"], is_user=False, allow_html=True)
@@ -23,5 +24,5 @@ if st.button("Enviar"):
     if "key" not in st.session_state: 
         st.session_state["key"] = 0
     st.session_state["key"] += 1
-    gerar_resposta(input_text)
+    if input_text.strip() != '':  gerar_resposta(input_text)
     st.rerun()
